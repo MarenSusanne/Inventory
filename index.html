@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory</title>
+    <style>
+        body {
+            background-image: url("https://i.bo3.no/image/333373/Stray_20220717010429.jpg?c=0&h=1080&w=1920");
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-color:peru;
+            margin: 1%;
+        }
+
+        div {
+            border: 2px solid green;
+            margin: 2px;
+            width: 98%;
+            height: 98%;
+        }
+
+        .slotbox {
+            height: 257px;
+            width: 256px;
+            display: grid;
+            grid-template-columns: repeat(3, 80px);
+            grid-template-rows: repeat(3, 80px);
+            gap: 5px;
+            background-color: rgba(205, 133, 63, 0.3);
+
+        }
+
+        .slotbox2 {
+            height: 341px;
+            width: 256px;
+            display: grid;
+            grid-template-columns: repeat(3, 80px);
+            grid-template-rows: repeat(4, 80px);
+            gap: 5px;
+            margin-bottom: 50px;
+            background-color: rgba(205, 133, 63, 0.4);
+        }
+
+        .header {
+            font-size: 200%;
+            font-weight: bold;
+            width: 256px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Courier New', Courier, monospace;
+            background-color: rgba(205, 133, 63, 0.3);
+        }
+
+        .slot {
+            font-size: 360%;
+            justify-content: center;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+        Must haves: Lage en 3x3 grid, lage items, få inventory til å åpne og lukke, mulighet til å flytte items
+        Nice to haves: Full inventory melding
+    -->
+
+    <div class="header">Items</div>
+    <div class="slotbox2">
+        <div class="slot" id="item1"
+            onclick="choose(this, 'inv1', 'inv2', 'inv3', 'inv4', 'inv5', 'inv6', 'inv7', 'inv8', 'inv9')">🧶</div>
+        <div class="slot" id="item2"
+            onclick="choose(this, 'inv1', 'inv2', 'inv3', 'inv4', 'inv5', 'inv6', 'inv7', 'inv8', 'inv9')">🐾</div>
+        <div class="slot" id="item3"
+            onclick="choose(this, 'inv1', 'inv2', 'inv3', 'inv4', 'inv5', 'inv6', 'inv7', 'inv8', 'inv9')">🐈</div>
+        <div class="slot" id="item4"
+            onclick="choose(this, 'inv1', 'inv2', 'inv3', 'inv4', 'inv5', 'inv6', 'inv7', 'inv8', 'inv9')">🐭</div>
+        <div class="slot" id="item5"
+            onclick="choose(this, 'inv1', 'inv2', 'inv3', 'inv4', 'inv5', 'inv6', 'inv7', 'inv8', 'inv9')">😺</div>
+        <div class="slot" id="item6"
+            onclick="choose(this, 'inv1', 'inv2', 'inv3', 'inv4', 'inv5', 'inv6', 'inv7', 'inv8', 'inv9')">🍲</div>
+        <div class="slot" id="item7"
+            onclick="choose(this, 'inv1', 'inv2', 'inv3', 'inv4', 'inv5', 'inv6', 'inv7', 'inv8', 'inv9')">🪖</div>
+        <div class="slot" id="item8"
+            onclick="choose(this, 'inv1', 'inv2', 'inv3', 'inv4', 'inv5', 'inv6', 'inv7', 'inv8', 'inv9')">🔪</div>
+        <div class="slot" id="item9"
+            onclick="choose(this, 'inv1', 'inv2', 'inv3', 'inv4', 'inv5', 'inv6', 'inv7', 'inv8', 'inv9')">🔫</div>
+        <div class="slot" id="item10"
+            onclick="choose(this, 'inv1', 'inv2', 'inv3', 'inv4', 'inv5', 'inv6', 'inv7', 'inv8', 'inv9')">🐈‍⬛</div>
+        <div class="slot" id="item11"
+            onclick="choose(this, 'inv1', 'inv2', 'inv3', 'inv4', 'inv5', 'inv6', 'inv7', 'inv8', 'inv9')">🚽</div>
+        <div class="slot" id="item12"
+            onclick="choose(this, 'inv1', 'inv2', 'inv3', 'inv4', 'inv5', 'inv6', 'inv7', 'inv8', 'inv9')">&#129362;</div>
+    </div>
+    <div class="header" onclick="showInventory()">Catventory</div>
+    <div id="inventory" class="slotbox">
+        <div class="slot" id="inv1"
+            onclick="choose2(this, 'item1', 'item2', 'item3', 'item4', 'item5', 'item6', 'item7', 'item8', 'item9', 'item10', 'item11', 'item12')"></div>
+        <div class="slot" id="inv2"
+            onclick="choose2(this, 'item1', 'item2', 'item3', 'item4', 'item5', 'item6', 'item7', 'item8', 'item9', 'item10', 'item11', 'item12')"></div>
+        <div class="slot" id="inv3"
+            onclick="choose2(this, 'item1', 'item2', 'item3', 'item4', 'item5', 'item6', 'item7', 'item8', 'item9', 'item10', 'item11', 'item12')"></div>
+        <div class="slot" id="inv4"
+            onclick="choose2(this, 'item1', 'item2', 'item3', 'item4', 'item5', 'item6', 'item7', 'item8', 'item9', 'item10', 'item11', 'item12')"></div>
+        <div class="slot" id="inv5"
+            onclick="choose2(this, 'item1', 'item2', 'item3', 'item4', 'item5', 'item6', 'item7', 'item8', 'item9', 'item10', 'item11', 'item12')"></div>
+        <div class="slot" id="inv6"
+            onclick="choose2(this, 'item1', 'item2', 'item3', 'item4', 'item5', 'item6', 'item7', 'item8', 'item9', 'item10', 'item11', 'item12')"></div>
+        <div class="slot" id="inv7"
+            onclick="choose2(this, 'item1', 'item2', 'item3', 'item4', 'item5', 'item6', 'item7', 'item8', 'item9', 'item10', 'item11', 'item12')"></div>
+        <div class="slot" id="inv8"
+            onclick="choose2(this, 'item1', 'item2', 'item3', 'item4', 'item5', 'item6', 'item7', 'item8', 'item9', 'item10', 'item11', 'item12')"></div>
+        <div class="slot" id="inv9"
+            onclick="choose2(this, 'item1', 'item2', 'item3', 'item4', 'item5', 'item6', 'item7', 'item8', 'item9', 'item10', 'item11', 'item12')"></div>
+    </div>
+    <script>
+        function showInventory() {
+            var inventoryItems = document.getElementById("inventory");
+            if (inventoryItems.style.display === "none") {
+                inventoryItems.style.display = "grid";
+
+            } else {
+                inventoryItems.style.display = "none";
+
+            }
+
+        }
+
+        function choose(element, alt1, alt2, alt3, alt4, alt5, alt6, alt7, alt8, alt9, alt10, alt11, alt12) {
+            try {
+        
+            if (document.getElementById(alt1).innerHTML == '') {
+                document.getElementById(alt1).innerHTML = element.innerHTML;
+                element.innerHTML = '';
+            }
+            else if (document.getElementById(alt2).innerHTML == '') {
+                document.getElementById(alt2).innerHTML = element.innerHTML;
+                element.innerHTML = '';
+            }
+            else if (document.getElementById(alt3).innerHTML == '') {
+                document.getElementById(alt3).innerHTML = element.innerHTML;
+                element.innerHTML = '';
+            }
+
+            else if (document.getElementById(alt4).innerHTML == '') {
+                document.getElementById(alt4).innerHTML = element.innerHTML;
+                element.innerHTML = '';
+            }
+
+            else if (document.getElementById(alt5).innerHTML == '') {
+                document.getElementById(alt5).innerHTML = element.innerHTML;
+                element.innerHTML = '';
+            }
+            else if (document.getElementById(alt6).innerHTML == '') {
+                document.getElementById(alt6).innerHTML = element.innerHTML;
+                element.innerHTML = '';
+            }
+            else if (document.getElementById(alt7).innerHTML == '') {
+                document.getElementById(alt7).innerHTML = element.innerHTML;
+                element.innerHTML = '';
+            }
+            else if (document.getElementById(alt8).innerHTML == '') {
+                document.getElementById(alt8).innerHTML = element.innerHTML;
+                element.innerHTML = '';
+            }
+            else if (document.getElementById(alt9).innerHTML == '') {
+                document.getElementById(alt9).innerHTML = element.innerHTML;
+                element.innerHTML = '';
+            }
+            else if (document.getElementById(alt10).innerHTML == '') {
+                document.getElementById(alt10).innerHTML = element.innerHTML;
+                element.innerHTML = '';
+            }
+            else if (document.getElementById(alt11).innerHTML == '') {
+                document.getElementById(alt11).innerHTML = element.innerHTML;
+                element.innerHTML = '';
+            }
+            else if (document.getElementById(alt12).innerHTML == '') {
+                document.getElementById(alt12).innerHTML = element.innerHTML;
+                element.innerHTML = '';
+            }
+
+        }
+
+            catch(error) {
+                alert('Your inventory is full!')
+            }
+
+        }
+
+
+
+        function choose2(element, alt1, alt2, alt3, alt4, alt5, alt6, alt7, alt8, alt9, alt10, alt11, alt12) {
+            if (document.getElementById(alt1).innerHTML == '') {
+                document.getElementById(alt1).innerHTML = element.innerHTML;
+                element.innerHTML = '';
+            }
+            else if (document.getElementById(alt2).innerHTML == '') {
+                document.getElementById(alt2).innerHTML = element.innerHTML;
+                element.innerHTML = '';
+            }
+            else if (document.getElementById(alt3).innerHTML == '') {
+                document.getElementById(alt3).innerHTML = element.innerHTML;
+                element.innerHTML = '';
+            }
+
+            else if (document.getElementById(alt4).innerHTML == '') {
+                document.getElementById(alt4).innerHTML = element.innerHTML;
+                element.innerHTML = '';
+            }
+
+            else if (document.getElementById(alt5).innerHTML == '') {
+                document.getElementById(alt5).innerHTML = element.innerHTML;
+                element.innerHTML = '';
+            }
+            else if (document.getElementById(alt6).innerHTML == '') {
+                document.getElementById(alt6).innerHTML = element.innerHTML;
+                element.innerHTML = '';
+            }
+            else if (document.getElementById(alt7).innerHTML == '') {
+                document.getElementById(alt7).innerHTML = element.innerHTML;
+                element.innerHTML = '';
+            }
+            else if (document.getElementById(alt8).innerHTML == '') {
+                document.getElementById(alt8).innerHTML = element.innerHTML;
+                element.innerHTML = '';
+            }
+            else if (document.getElementById(alt9).innerHTML == '') {
+                document.getElementById(alt9).innerHTML = element.innerHTML;
+                element.innerHTML = '';
+            }
+            else if (document.getElementById(alt10).innerHTML == '') {
+                document.getElementById(alt10).innerHTML = element.innerHTML;
+                element.innerHTML = '';
+            }
+            else if (document.getElementById(alt11).innerHTML == '') {
+                document.getElementById(alt11).innerHTML = element.innerHTML;
+                element.innerHTML = '';
+            }
+            else if (document.getElementById(alt12).innerHTML == '') {
+                document.getElementById(alt12).innerHTML = element.innerHTML;
+                element.innerHTML = '';
+            }
+
+
+
+
+
+        }
+
+    </script>
+</body>
+
+</html>
